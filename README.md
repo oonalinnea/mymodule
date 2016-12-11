@@ -1,3 +1,1 @@
-Muokkaus
-
-Tämä on moduulini Palvelinten hallinta kurssille. 
+## Moduulini palvelinten hallinta kurssille
