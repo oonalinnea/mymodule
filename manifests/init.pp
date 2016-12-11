@@ -1,4 +1,4 @@
-class omamoduuli {
+class mymodule {
 	Package {ensure => "installed", allowcdrom => "true",}
 	package {"apache2":}
 	package {"php7.0":}
@@ -26,7 +26,7 @@ class omamoduuli {
 	}
 
 	file { "/etc/skel/public_html/index.php":
-		content => template("omamoduuli/index.php"),
+		content => template("mymodule/index.php"),
 	}
 
 	file { '/etc/apache2/mods-enabled/userdir.conf':
@@ -44,7 +44,7 @@ class omamoduuli {
 	}
 
 	file {"/etc/apache2/mods-available/php7.0.conf":
-		content => template("omamoduuli/php7.0.conf"),
+		content => template("mymodule/php7.0.conf"),
 		notify => Service ["apache2"],
 	}
 
