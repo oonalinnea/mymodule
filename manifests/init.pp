@@ -11,16 +11,6 @@ class mymodule {
 	package {"libapache2-mod-php":
 		require => Package ["apache2"],}
 
-	file { "/etc/motd":
-		ensure => 'link',
-		target => "/var/run/motd",	
-	}
-
-	file { "/var/run/motd":
-		ensure => present,
-		content => "Tervetuloa!\n",
-	}
-
 	file { "/etc/skel/public_html":
 		ensure => "directory",
 	}
@@ -46,6 +36,7 @@ class mymodule {
 	file {"/etc/apache2/mods-available/php7.0.conf":
 		content => template("mymodule/php7.0.conf"),
 		notify => Service ["apache2"],
+		require => Package["apache2", "php7.0", "libapache2-mod-php"],
 	}
 
 	service {"apache2":
