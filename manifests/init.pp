@@ -6,6 +6,8 @@ class mymodule {
 	package {"libreoffice":}
 	package {"ssh":}
 	package {"git":}
+	package {"mysql-client":}
+	package {"mysql-server":}
 	package {"libapache2-mod-php":
 		require => Package ["apache2"],}
 
