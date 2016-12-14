@@ -18,7 +18,11 @@ class mymodule {
 	file { "/etc/skel/public_html/index.php":
 		content => template("mymodule/index.php"),
 	}
-
+	
+	file {"/var/www/html/index.html":
+		content => "Hei maailma!\n",
+	}
+	
 	file { '/etc/apache2/mods-enabled/userdir.conf':
 		ensure => 'link',
 		target => '../mods-available/userdir.conf',
