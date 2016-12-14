@@ -3,6 +3,6 @@
   <title>Testisivu</title>
  </head>
  <body>
- <?php echo '<p>Testisivu joka näkyy jokaiselle käyttäjälle.</p>'; ?> 
+ <?php echo '<p>Testisivu </p>'; ?> 
  </body>
 </html>
